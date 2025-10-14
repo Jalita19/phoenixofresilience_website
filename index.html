@@ -621,11 +621,194 @@
 
 <section class="video-section">
   <h2>Watch Our Story</h2>
-  <div class="video-thumbnail">
-    <img src="https://placehold.co/800x450/F8F1E9/800000?text=Watch+Our+Story" alt="Video Thumbnail">
+
+  <!-- Thumbnail -->
+  <div class="video-thumbnail" id="videoThumbnail">
+    <img 
+      src="https://placehold.co/800x450/F8F1E9/800000?text=Watch+Our+Story" 
+      alt="Watch Our Story - Phoenix of Resilience Foundation">
     <div class="play-btn">▶</div>
   </div>
+
+  <!-- Popup Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-wrapper">
+      <iframe 
+        id="youtubeVideo" 
+        src="" 
+        title="Phoenix of Resilience Foundation Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <span class="close-modal" id="closeModal">&times;</span>
+    </div>
+  </div>
 </section>
+
+<style>
+/* === VIDEO SECTION === */
+.video-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #fff8f5, #fef3e7);
+}
+
+.video-section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #800000;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* === THUMBNAIL === */
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+  width: 100%;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+.video-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #800000, #F2701D);
+  color: #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(242,112,29,0.6);
+  transition: all 0.3s ease;
+}
+
+.video-thumbnail:hover .play-btn {
+  background: #F2701D;
+  box-shadow: 0 0 35px rgba(242,112,29,0.9);
+}
+
+/* === MODAL === */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.4s ease;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(242,112,29,0.5);
+  animation: slideUp 0.4s ease;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.close-modal {
+  position: absolute;
+  top: -35px;
+  right: -5px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  color: #F2701D;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* === MOBILE === */
+@media (max-width: 600px) {
+  .video-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .play-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+}
+</style>
+
+<script>
+const videoThumbnail = document.getElementById('videoThumbnail');
+const videoModal = document.getElementById('videoModal');
+const youtubeVideo = document.getElementById('youtubeVideo');
+const closeModal = document.getElementById('closeModal');
+
+// Open modal and autoplay your YouTube video
+videoThumbnail.addEventListener('click', () => {
+  youtubeVideo.src = "https://www.youtube.com/embed/HxIgohXcn6I?si=L_TjOnucvyZX8vI&autoplay=1";
+  videoModal.style.display = "flex";
+});
+
+// Close modal and stop video
+closeModal.addEventListener('click', () => {
+  videoModal.style.display = "none";
+  youtubeVideo.src = "";
+});
+
+// Close when clicking outside the video
+window.addEventListener('click', (e) => {
+  if (e.target === videoModal) {
+    videoModal.style.display = "none";
+    youtubeVideo.src = "";
+  }
+});
+</script>
+
 
 <section class="impact">
   <hr class="section-divider">
