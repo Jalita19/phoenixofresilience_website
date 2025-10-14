@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply — Phoenix of Resilience Foundation</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --maroon: #800000;
+      --orange: #F2701D;
+      --beige: #F8F1E9;
+      --text: #2B2B2B;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Lato', Arial, sans-serif;
+      color: var(--text);
+      background: var(--beige);
+      line-height: 1.6;
+    }
+
+   /* ====== HEADER (Professional Full-Width Layout) ====== */
+header {
+  background: #fff;
+  border-bottom: 3px solid var(--orange);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* ====== BRAND AREA ====== */
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--maroon);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: 0.5px;
+}
+
+header .brand img {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ====== NAVIGATION LINKS ====== */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* evenly spaced, professional look */
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.1px;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 6px 2px;
+}
+
+/* HOVER EFFECT */
+nav a:hover {
+  color: var(--orange);
+}
+
+/* ACTIVE PAGE UNDERLINE */
+nav a[aria-current="page"] {
+  color: var(--maroon);
+  font-weight: 800;
+}
+
+nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--maroon), var(--orange));
+  border-radius: 3px;
+}
+
+/* ====== DONATE BUTTON (Stands Out) ====== */
+nav .btn {
+  background: linear-gradient(90deg, var(--maroon), var(--orange));
+  color: #fff !important;
+  padding: 8px 22px; /* smaller for balance */
+  border-radius: 999px;
+  font-weight: 700; /* slightly lighter */
+  font-size: 1rem; /* match nav text */
+  border: 2px solid var(--maroon);
+  box-shadow: 0 0 8px rgba(242, 112, 29, 0.25);
+  transition: all 0.3s ease;
+  background-size: 200% 200%;
+  animation: phoenixPulse 3s infinite ease-in-out;
+}
+
+
+/* HOVER - donate button reverses cleanly */
+nav .btn:hover {
+  background: #fff;
+  color: var(--maroon) !important;
+  border-color: var(--orange);
+  box-shadow: 0 0 16px rgba(242, 112, 29, 0.5);
+  animation: none;
+}
+
+/* PULSE ANIMATION */
+@keyframes phoenixPulse {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 6px rgba(242, 112, 29, 0.3);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 18px rgba(242, 112, 29, 0.7);
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 6px rgba(242, 112, 29, 0.3);
+  }
+}
+
+/* ====== RESPONSIVE NAV ====== */
+@media (max-width: 960px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 30px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px;
+  }
+
+  header .brand img {
+    width: 60px;
+    height: 60px;
+  }
+
+  header .brand {
+    font-size: 1.4rem;
+  }
+}
+
+   /* HERO */
+    .hero {
+      background: linear-gradient(120deg, var(--maroon), var(--orange));
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 56px);
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-contact {
+      background: linear-gradient(120deg, var(--maroon), var(--orange));
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 60px 20px;
+    }
+    .hero-contact h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 60px);
+      margin-bottom: 15px;
+    }
+    .hero-contact p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+      max-width: 1100px;
+      margin: 80px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    /* FORM */
+    .contact-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #f0e6d6;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .contact-form h2 {
+      color: var(--maroon);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1.5px solid #e9dfc1;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      background: #fdfbf7;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--orange);
+      outline: none;
+    }
+
+    button {
+      background: var(--orange);
+      color: #fff;
+      font-weight: 800;
+      border: none;
+      padding: 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--maroon);
+    }
+
+    /* INFO SECTION */
+    .contact-info {
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #f0e6d6;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .contact-info h2 {
+      color: var(--maroon);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .contact-info a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-info a:hover {
+      color: var(--maroon);
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--maroon);
+      color: #fff;
+      padding: 50px 20px;
+      border-top: 4px solid var(--orange);
+    }
+    footer .wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    footer h4 {
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+      color: #F8F1E9;
+    }
+    footer a {
+      color: #FFD580;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .social {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .social img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+      transition: 0.3s;
+    }
+    .social img:hover {
+      filter: brightness(1) saturate(2);
+    }
+    .footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #f8f1e9;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+}
+    @media (max-width:600px) {
+      .footer-grid {grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <a href="index.html" class="brand">
+    <img src="assets/img/logo.png" alt="Phoenix Logo">
+    <span>Phoenix of Resilience</span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a><br>
+    <a href="about.html">About</a><br>
+    <a href="programs.html" >Programs</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="apply.html">Apply</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="donate.html" class="btn">Donate</a>
+  </nav>
+</header>
+
+  <!-- HERO -->
+<section class="hero-contact">
+  <div class="hero-inner">
+    <h1>Contact Phoenix of Resilience</h1>
+    <p>We’re here to connect, collaborate, and help women rise beyond their pasts.</p>
+  </div>
+</section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <select name="reason" required>
+          <option value="">Select a Reason for Contact</option>
+          <option value="volunteer">Volunteer Opportunities</option>
+          <option value="partner">Partnership or Collaboration</option>
+          <option value="sponsor">Sponsorship Inquiry</option>
+          <option value="media">Media or Speaking Request</option>
+          <option value="general">General Question</option>
+        </select>
+
+        <textarea name="message" rows="6" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p><strong>Email:</strong> <a href="mailto:inquire@phoenixofresilience.org">inquire@phoenixofresilience.org</a></p>
+      <p><strong>Phone:</strong> <a href="tel:14046429779">404-642-9779</a></p>
+      <p><strong>Address:</strong><br>Atlanta, Georgia</p>
+      <iframe src="https://www.google.com/maps?q=Atlanta,+GA&output=embed" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+<footer>
+    <div class="wrap">
+      <div>
+        <h4>Contact Us</h4>
+        <p>Email: <a href="mailto:inquire@phoenixofresilience.org">inquire@phoenixofresilience.org</a><br>
+        Phone: <a href="tel:4046429779">404-642-9779</a></p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a><br>
+        <a href="programs.html">Programs</a><br>
+        <a href="get-involved.html">Get Involved</a><br>
+        <a href="apply.html">Apply</a><br>
+        <a href="contact.html">Contact</a><br>
+        <a href="donate.html">Donate</a><br>
+        
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+<div class="social">
+  <a href="https://www.facebook.com/PhoenixofResilienceFoundation" target="_blank" aria-label="Facebook">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com/phoenixofresiliencefoundation?igsh=MjQzMmw2c2hqcnR4" target="_blank" aria-label="Instagram">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com/in/phoenixofresilience-foundation-1b11a738a
+" target="_blank" aria-label="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+  </a>
+  <a href="https://www.tiktok.com/@phoenixofresilience?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
+  </a>
+</div>
+      </div>
+      <div>
+        <h4>Stay Connected</h4>
+        <p>Subscribe to our newsletter for updates on programs and success stories.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" style="padding:10px;border-radius:8px;border:none;width:100%;max-width:220px;">
+          <button type="submit" style="margin-top:10px;background:var(--orange);color:#fff;padding:8px 16px;border:none;border-radius:999px;font-weight:800;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    </div>
+   <div class="footer-bottom">
+      © 2025 Phoenix of Resilience Foundation Inc.  · Registered Charity · All Rights Reserved</p>
+    </div>
+  </div>
+   </div>
+</footer>
+</body>
+</html>
