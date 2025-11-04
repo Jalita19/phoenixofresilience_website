@@ -400,57 +400,137 @@ nav .btn:hover {
   background: var(--maroon);
   color: #fff;
 }
-/* FOOTER */
+ /* ===== FOOTER ===== */
     footer {
-      background: var(--maroon);
-      color: #fff;
-      padding: 50px 20px;
-      border-top: 4px solid var(--orange);
-    }
-    footer .wrap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    footer h4 {
-      margin-bottom: 10px;
-      font-family: 'Playfair Display', serif;
-      color: #F8F1E9;
-    }
-    footer a {
-      color: #FFD580;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    .social {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .social img {
-      width: 28px;
-      height: 28px;
-      filter: brightness(0) invert(1);
-      transition: 0.3s;
-    }
-    .social img:hover {
-      filter: brightness(1) saturate(2);
-    }
-    .footer-bottom {
+  background: var(--maroon);
+  color: #fff; /* Ensures all text defaults to white */
+  padding: 50px 20px;
+  border-top: 4px solid var(--orange);
+}
+
+footer .wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  color: #fff; /* White headings */
+}
+
+footer p,
+footer li,
+footer span {
+  color: #fff; /* Ensures all normal text is white */
+}
+
+footer a {
+  color: #fff; /* White links */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #FFD700; /* Optional: gold hover effect */
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.social img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+
+.social img:hover {
+  filter: brightness(1) saturate(2);
+}
+
+.footer-bottom {
   text-align: center;
   margin-top: 40px;
   font-size: 0.9rem;
-  color: #f8f1e9;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff; /* White bottom text */
+  border-top: 1px solid rgba(255,255,255,0.3);
   padding-top: 20px;
 }
-    @media (max-width:600px) {
-      .footer-grid {grid-template-columns:1fr;}
-    }
+
+@media (max-width: 960px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 30px;
+  }
+  nav { flex-wrap: wrap; gap: 16px; margin-top: 10px; }
+  header .brand img { width: 60px; height: 60px; }
+  header .brand { font-size: 1.4rem; }
+}
+
+   
+    /* Newsletter in Footer */
+.newsletter-footer {
+  text-align: center;
+  background: transparent; /* blend into maroon footer */
+  padding: 0;
+  color: #fff;
+}
+
+.newsletter-footer h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #FFD580;
+  margin-bottom: 8px;
+}
+
+.newsletter-footer p {
+  color: #f8f1e9;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 999px;
+  width: 100%;
+  max-width: 220px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+}
+
+.newsletter-form button {
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #ffb87d;
+  color: var(--maroon);
+  box-shadow: 0 0 8px rgba(255, 213, 128, 0.4);
+}
   </style>
 </head>
 <body>
@@ -580,58 +660,60 @@ nav .btn:hover {
 </section>
  
 
-<!-- FOOTER -->
 <footer>
-    <div class="wrap">
-      <div>
-        <h4>Contact Us</h4>
-        <p>Email: <a href="mailto:inquire@phoenixofresilience.org">inquire@phoenixofresilience.org</a><br>
-        Phone: <a href="tel:4046429779">404-642-9779</a></p>
+  <div class="wrap">
+    <div>
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:inquire@phoenixofresilience.org">inquire@phoenixofresilience.org</a><br>
+      Phone: <a href="tel:4046429779">404-642-9779</a></p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="programs.html">Programs</a><br>
+      <a href="get-involved.html">Get Involved</a><br>
+      <a href="apply.html">Apply</a><br>
+      <a href="contact.html">Contact</a><br>
+      <a href="donate.html">Donate</a>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <div class="social">
+        <a href="https://www.facebook.com/PhoenixofResilienceFoundation" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/phoenixofresiliencefoundation" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/in/phoenixofresilience-foundation-1b11a738a" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+        <a href="https://www.tiktok.com/@phoenixofresilience" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
+        </a>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="index.html">Home</a><br>
-        <a href="about.html">About</a><br>
-        <a href="programs.html">Programs</a><br>
-        <a href="get-involved.html">Get Involved</a><br>
-        <a href="apply.html">Apply</a><br>
-        <a href="contact.html">Contact</a><br>
-        <a href="donate.html">Donate</a><br>
-        
-      </div>
-      <div>
-        <h4>Follow Us</h4>
-<div class="social">
-  <a href="https://www.facebook.com/PhoenixofResilienceFoundation" target="_blank" aria-label="Facebook">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-  </a>
-  <a href="https://www.instagram.com/phoenixofresiliencefoundation?igsh=MjQzMmw2c2hqcnR4" target="_blank" aria-label="Instagram">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-  </a>
-  <a href="https://www.linkedin.com/in/phoenixofresilience-foundation-1b11a738a
-" target="_blank" aria-label="LinkedIn">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-  </a>
-  <a href="https://www.tiktok.com/@phoenixofresilience?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
-  </a>
+    </div>
+    <div>
+<!-- Newsletter Signup (Footer Integrated) -->
+<div class="newsletter-footer">
+  <h4>Join Our Newsletter</h4>
+  <p>Stay updated on our programs, housing, and empowerment stories.</p>
+   <form 
+    action="https://app.convertkit.com/forms/8663796/subscriptions" 
+    method="post" 
+    class="newsletter-form"
+    target="_blank"
+  >
+  <input type="email" name="email_address" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
 </div>
-      </div>
-      <div>
-        <h4>Stay Connected</h4>
-        <p>Subscribe to our newsletter for updates on programs and success stories.</p>
-        <form>
-          <input type="email" placeholder="Enter your email" style="padding:10px;border-radius:8px;border:none;width:100%;max-width:220px;">
-          <button type="submit" style="margin-top:10px;background:var(--orange);color:#fff;padding:8px 16px;border:none;border-radius:999px;font-weight:800;">Subscribe</button>
-        </form>
-      </div>
-    </div>
-    </div>
-   <div class="footer-bottom">
-      © 2025 Phoenix of Resilience Foundation Inc.  · Registered Charity · All Rights Reserved</p>
-    </div>
+</div>
   </div>
-   </div>
+  <div class="footer-bottom">
+    © 2025 Phoenix of Resilience Foundation Inc. · Registered Charity · All Rights Reserved
+  </div>
 </footer>
 
   <script>
@@ -646,6 +728,19 @@ nav .btn:hover {
   }, { threshold: 0.2 });
 
   reveals.forEach(el => observer.observe(el));
+</script>
+<script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+  });
 </script>
 </body>
 </html>
