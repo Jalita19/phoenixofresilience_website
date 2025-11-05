@@ -249,6 +249,82 @@ nav .btn:hover {
       background: var(--orange);
       color: #fff;
     }
+ /* POPUP MODALS */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background: #fffdf8;
+  margin: auto;
+  padding: 40px 30px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content h3 {
+  color: var(--maroon);
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.modal-content p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.modal-content ul {
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.close {
+  color: var(--maroon);
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.close:hover {
+  color: var(--orange);
+}
+
+.apply-btn {
+  background: linear-gradient(135deg, var(--maroon), var(--orange));
+  color: #fff !important;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 10px 22px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.apply-btn:hover {
+  background: var(--gold);
+  box-shadow: 0 8px 20px rgba(196,155,59,0.4);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
      /* SUCCESS STORIES */
 .stories {
@@ -559,34 +635,147 @@ footer a:hover {
   </section>
 
   <section class="programs">
-    <h2>Transformative Programs</h2>
-    <div class="program-grid">
-      <div class="program">
-        <img src="assets/img/housing-help.jpeg" alt="Housing Assistance">
-        <h3>Housing Assistance</h3>
-        <p>Safe, clean, and affordable housing for women reentering society — providing stability for a new start.</p>
-        <a href="apply.html" class="btn">Learn More</a>
-      </div>
-      <div class="program">
-        <img src="assets/img/Types-of-Career-Development-Planning.jpg" alt="Career Development">
-        <h3>Career Development</h3>
-        <p>Job readiness, resume building, and career coaching that open doors to sustainable employment.</p>
-        <a href="apply.html" class="btn">Learn More</a>
-      </div>
-      <div class="program">
-        <img src="assets/img/peer support.jpg" alt="Peer Support">
-        <h3>Peer Support</h3>
-        <p>Guided mentorship from women who’ve overcome similar challenges and rebuilt their lives successfully.</p>
-        <a href="apply.html" class="btn">Learn More</a>
-      </div>
-      <div class="program">
-        <img src="assets/img/garden.jpg" alt="Life Skills & Training">
-        <h3>Life Skills & Training</h3>
-        <p>Empowerment through essential skills — from budgeting to communication — for lasting independence.</p>
-        <a href="apply.html" class="btn">Learn More</a>
-      </div>
+  <h2>Transformative Programs</h2>
+  <div class="program-grid">
+    <div class="program">
+      <img src="assets/img/housing-help.jpeg" alt="Housing Assistance">
+      <h3>Housing Assistance</h3>
+      <p>Safe, clean, and affordable housing for women reentering society — providing stability for a new start.</p>
+      <button class="btn" onclick="openModal('housingModal')">Learn More</button>
     </div>
-  </section>
+
+    <div class="program">
+      <img src="assets/img/Types-of-Career-Development-Planning.jpg" alt="Career Development">
+      <h3>Career Development</h3>
+      <p>Job readiness, resume building, and career coaching that open doors to sustainable employment.</p>
+      <button class="btn" onclick="openModal('careerModal')">Learn More</button>
+    </div>
+
+    <div class="program">
+      <img src="assets/img/peer support.jpg" alt="Peer Support">
+      <h3>Peer Support</h3>
+      <p>Guided mentorship from women who’ve overcome similar challenges and rebuilt their lives successfully.</p>
+      <button class="btn" onclick="openModal('peerModal')">Learn More</button>
+    </div>
+
+    <div class="program">
+      <img src="assets/img/garden.jpg" alt="Life Skills & Training">
+      <h3>Life Skills & Training</h3>
+      <p>Empowerment through essential skills — from budgeting to communication — for lasting independence.</p>
+      <button class="btn" onclick="openModal('skillsModal')">Learn More</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== POPUP MODALS ========== -->
+
+<!-- HOUSING ASSISTANCE -->
+<div id="housingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('housingModal')">&times;</span>
+    <h3>Housing Assistance</h3>
+    <p>
+      At <strong>Phoenix of Resilience Foundation</strong>, we believe every woman deserves a safe place to call home. 
+      Our Housing Assistance Program provides transitional and long-term housing opportunities for women 
+      rebuilding their lives after incarceration, domestic violence, homelessness, or other life-altering challenges.
+    </p>
+    <p>
+      We partner with local landlords, housing authorities, and private donors to ensure every participant 
+      is placed in a stable, supportive environment that promotes personal growth and independence.
+    </p>
+    <ul>
+      <li>🏡 <strong>Transitional & Permanent Housing:</strong> Safe, furnished spaces designed to restore dignity and stability.</li>
+      <li>💰 <strong>Income-Based Rent:</strong> Affordable housing scaled to each woman’s financial situation.</li>
+      <li>🧾 <strong>Budget Coaching:</strong> Financial literacy sessions that prepare residents for long-term self-sufficiency.</li>
+      <li>🤝 <strong>Community Partnerships:</strong> Collaborations with nonprofits, churches, and reentry programs to expand access.</li>
+      <li>💬 <strong>Case Management:</strong> Ongoing one-on-one guidance to help residents set goals, find employment, and thrive.</li>
+    </ul>
+    <p>
+      The goal isn’t just to provide a roof — it’s to build a foundation for healing, hope, and self-reliance.
+    </p>
+    <a href="apply.html" class="btn apply-btn">Apply Now</a>
+  </div>
+</div>
+
+<!-- CAREER DEVELOPMENT -->
+<div id="careerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('careerModal')">&times;</span>
+    <h3>Career Development</h3>
+    <p>
+      Our Career Development Program helps women rediscover their potential and step confidently into the workforce or entrepreneurship. 
+      We provide hands-on training, personalized career planning, and real-world connections that open doors to sustainable employment.
+    </p>
+    <p>
+      Whether participants dream of starting a business, earning a certification, or finding their first job after release, 
+      we walk beside them every step of the way — from résumé building to job placement.
+    </p>
+    <ul>
+      <li>💼 <strong>Job Readiness Training:</strong> Resume writing, interview skills, workplace etiquette, and goal planning.</li>
+      <li>📚 <strong>Certification Support:</strong> Guidance and funding assistance for trade school or professional licensing.</li>
+      <li>🧑‍💻 <strong>Digital Skills:</strong> Computer literacy, email communication, and online application training.</li>
+      <li>🏢 <strong>Employer Partnerships:</strong> Connections with local companies, staffing agencies, and HR departments.</li>
+      <li>🚀 <strong>Entrepreneurship Pathways:</strong> Business planning, branding, and mentorship through Kaizen J Consulting LLC.</li>
+    </ul>
+    <p>
+      By the end of the program, participants don’t just have a job — they have a career path, a plan, and a renewed sense of purpose.
+    </p>
+    <a href="apply.html" class="btn apply-btn">Apply Now</a>
+  </div>
+</div>
+
+<!-- PEER SUPPORT -->
+<div id="peerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('peerModal')">&times;</span>
+    <h3>Peer Support & Mentorship</h3>
+    <p>
+      Healing happens in community. Our Peer Support Program creates a safe, judgment-free space where women can 
+      share experiences, celebrate victories, and grow together. This sisterhood is built on empathy, understanding, and empowerment.
+    </p>
+    <p>
+      Through guided mentorship, group discussions, and wellness activities, participants gain emotional strength 
+      and develop strategies to overcome barriers and stay focused on personal transformation.
+    </p>
+    <ul>
+      <li>💬 <strong>Support Circles:</strong> Weekly group meetings focused on encouragement, accountability, and goal setting.</li>
+      <li>🌷 <strong>Mentorship Program:</strong> Pairing participants with women who’ve successfully reentered society.</li>
+      <li>🧘‍♀️ <strong>Wellness & Healing Workshops:</strong> Yoga, mindfulness, and emotional regulation training.</li>
+      <li>🎨 <strong>Creative Expression:</strong> Art therapy, journaling, and storytelling to process trauma and celebrate progress.</li>
+      <li>🕊️ <strong>From Inside to Insight:</strong> A reflective writing initiative showcasing transformation stories from within the system.</li>
+    </ul>
+    <p>
+      Peer Support is the heartbeat of our organization — turning pain into power and isolation into inspiration.
+    </p>
+    <a href="apply.html" class="btn apply-btn">Apply Now</a>
+  </div>
+</div>
+
+<!-- LIFE SKILLS & TRAINING -->
+<div id="skillsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('skillsModal')">&times;</span>
+    <h3>Life Skills & Empowerment Training</h3>
+    <p>
+      Our Life Skills & Empowerment Training equips women with practical tools for long-term independence and confidence. 
+      Participants learn to manage finances, communicate effectively, and balance home, work, and personal growth.
+    </p>
+    <p>
+      This program is where transformation becomes habit — helping women not just rebuild their lives but sustain their success.
+    </p>
+    <ul>
+      <li>🧾 <strong>Financial Management:</strong> Budgeting, credit repair, saving strategies, and smart spending habits.</li>
+      <li>🗣️ <strong>Effective Communication:</strong> Conflict resolution, self-advocacy, and leadership development.</li>
+      <li>🧘‍♀️ <strong>Self-Care & Wellness:</strong> Nutrition, time management, and building healthy routines.</li>
+      <li>🌱 <strong>Goal Planning:</strong> Vision board sessions and step-by-step success mapping.</li>
+      <li>🏡 <strong>Independent Living Skills:</strong> Home maintenance, organization, and resource management.</li>
+    </ul>
+    <p>
+      This program helps women reclaim control of their lives — not just surviving, but thriving with confidence and clarity.
+    </p>
+    <a href="apply.html" class="btn apply-btn">Apply Now</a>
+  </div>
+</div>
 
   <hr class="section-divider">
 
@@ -639,7 +828,7 @@ footer a:hover {
         <div class="icon">🤝</div>
         <h3>Become a Partner</h3>
         <p>Partner with us to grow our housing and workforce programs. Together, we can help more women.</p>
-        <a href="get-involved.html" class="btn">Partner Today</a>
+        <a href="contact.html" class="btn">Partner Today</a>
       </div>
 
       <div class="partner-card">
@@ -742,5 +931,19 @@ footer a:hover {
     menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
   });
 </script>
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+window.onclick = function(event) {
+  document.querySelectorAll('.modal').forEach(modal => {
+    if (event.target === modal) modal.style.display = 'none';
+  });
+}
+</script>
+
 </body>
 </html>
