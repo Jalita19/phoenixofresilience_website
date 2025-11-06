@@ -6,24 +6,33 @@
   <title>Thank You | Phoenix of Resilience Foundation</title>
 
   <style>
+    :root {
+      --maroon: #800000;
+      --orange: #F2701D;
+      --beige: #F8F1E9;
+      --text: #2B2B2B;
+    }
+
     body {
       margin: 0;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #6b0d1f, #b8860b);
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--maroon), var(--orange));
+      color: var(--text);
+      font-family: 'Lato', Arial, sans-serif;
       overflow: hidden;
     }
 
     .thank-you-container {
-      background: rgba(255, 255, 255, 0.12);
+      background: var(--beige);
+      color: var(--text);
       padding: 60px 50px;
       border-radius: 24px;
       text-align: center;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+      max-width: 600px;
       animation: fadeIn 1.2s ease-in-out;
     }
 
@@ -33,40 +42,49 @@
     }
 
     .logo img {
-      width: 100px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+      width: 110px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 12px rgba(242, 112, 29, 0.6);
     }
 
     h1 {
-      font-size: 2.6rem;
-      color: #ffd700;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--maroon);
       margin-bottom: 10px;
       font-weight: 700;
     }
 
     p {
-      color: #f8f8f8;
+      color: var(--text);
       margin-bottom: 20px;
       font-size: 1.1rem;
       line-height: 1.6;
     }
 
+    strong {
+      color: var(--orange);
+      font-weight: 700;
+    }
+
     .btn-main {
+      display: inline-block;
       text-decoration: none;
-      background: linear-gradient(135deg, #ffd700, #ffb400);
-      color: #6b0d1f;
+      background: linear-gradient(135deg, var(--maroon), var(--orange));
+      color: #fff;
       padding: 14px 36px;
       border-radius: 50px;
       font-weight: 700;
-      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+      box-shadow: 0 4px 20px rgba(242, 112, 29, 0.4);
       transition: all 0.3s ease;
     }
 
     .btn-main:hover {
-      background: linear-gradient(135deg, #fff, #ffd700);
-      color: #000;
+      background: #fff;
+      color: var(--maroon);
+      border: 2px solid var(--orange);
       transform: translateY(-3px);
     }
 
@@ -76,11 +94,29 @@
       width: 100%;
       text-align: center;
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--beige);
     }
 
     footer strong {
-      color: #ffd700;
+      color: #FFD580;
+    }
+
+    footer a {
+      color: #FFD580;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .thank-you-container {
+        padding: 40px 25px;
+      }
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -88,19 +124,20 @@
 <body>
   <section class="thank-you-container">
     <div class="logo">
-      <!-- Replace the URL below with your logo path -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Phoenix_Bird_Logo.png" alt="Phoenix of Resilience Logo" />
+      <!-- Replace with your logo path -->
+      <img src="assets/img/background gone.PNG" alt="Phoenix of Resilience Logo" />
     </div>
+
     <h1>Thank You!</h1>
     <p>Your message has been successfully sent to <strong>Phoenix of Resilience Foundation, Inc.</strong></p>
-    <p>We’ll be in touch soon. Until then, stay inspired and resilient — because you are the example.</p>
+    <p>We’ll be in touch soon. Until then, stay inspired and resilient — because <strong>you are the example.</strong></p>
     <a href="index.html" class="btn-main">Back to Home</a>
   </section>
 
   <footer>
     <strong>Phoenix of Resilience Foundation, Inc.</strong><br>
-    255 N. Main St #1084 Jonesboro, GA 30237 • 404-642-9779 • 
-    <a href="mailto:inquire@phoenixofresilience.org" style="color:#ffd700;text-decoration:none;">inquire@phoenixofresilience.org</a><br>
+    255 N. Main St #1084, Jonesboro, GA 30237 • (404) 642-9779 • 
+    <a href="mailto:inquire@phoenixofresilience.org">inquire@phoenixofresilience.org</a><br>
     “Once Overlooked, Now the Example.” © 2025 All Rights Reserved.
   </footer>
 </body>
